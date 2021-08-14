@@ -10,16 +10,16 @@
   <div fxFlex="1 0 0" class="spacer"></div>
   <div fxHide.lt-sm>
     <ul class="navigation-items" fxLayoutGap="10px" fxLayout="row">
-      <li>
+      <li *ngIf="!isAuth">
         <a routerLink="/signup">Signup</a>
       </li>
-      <li>
+      <li *ngIf="!isAuth">
         <a routerLink="/login">Login</a>
       </li>
       <li>
-        <a routerLink="/training">Training</a>
+        <a *ngIf="isAuth" routerLink="/training">Training</a>
       </li>
-      <li>
+      <li *ngIf="isAuth">
         <a>Logout</a>
       </li>
     </ul>
