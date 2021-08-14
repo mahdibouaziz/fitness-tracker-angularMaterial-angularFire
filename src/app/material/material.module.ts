@@ -8,6 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 const marerialArray = [
   MatButtonModule,
@@ -17,6 +19,8 @@ const marerialArray = [
   MatDatepickerModule,
   MatNativeDateModule,
   MatCheckboxModule,
+  MatToolbarModule,
+  MatSidenavModule,
 ];
 
 @NgModule({
