@@ -26,7 +26,7 @@
     <mat-icon>fitness_center</mat-icon>
     <span class="nav-caption"> Training </span>
   </a>
-  <mat-list-item *ngIf="isAuth" (click)="sidenav.close()">
+  <mat-list-item *ngIf="isAuth" (click)="onLogout()">
     <button mat-icon-button>
       <mat-icon>eject</mat-icon>
       <span class="nav-caption">Logout</span>
