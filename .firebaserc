@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ng-fitness-tracker-3b2cf": {
+      "hosting": {
+        "fitness-tracker-angularMaterial-angularFire": [
+          "ng-fitness-tracker-3b2cf"
+        ]
+      }
+    }
+  }
+}
