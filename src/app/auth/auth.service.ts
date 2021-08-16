@@ -5,6 +5,7 @@ import { AuthDataDto } from '../dto/auth-data.dto';
 import { User } from '../models/user.model';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { TrainingService } from '../training/training.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,8 @@ export class AuthService {
   constructor(
     private router: Router,
     private auth: AngularFireAuth,
-    private trainingService: TrainingService
+    private trainingService: TrainingService,
+    private snackBar: MatSnackBar
   ) {}
 
   initAuthListener() {
@@ -39,7 +41,9 @@ export class AuthService {
       .createUserWithEmailAndPassword(authData.email, authData.password)
       .then((result) => {})
       .catch((err) => {
-        console.log(err);
+        this.snackBar.open(err.message, null, {
+          duration: 3000,
+        });
       });
   }
 
@@ -48,7 +52,9 @@ export class AuthService {
       .signInWithEmailAndPassword(authData.email, authData.password)
       .then((result) => {})
       .catch((err) => {
-        console.log(err);
+        this.snackBar.open(err.message, null, {
+          duration: 3000,
+        });
       });
   }
 
