@@ -1,35 +1,35 @@
-<table mat-table [dataSource]="dataSource">
-  <!-- id Column -->
+<!-- <table mat-table [dataSource]="dataSource">
+
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>Id</th>
     <td mat-cell *matCellDef="let element">{{ element.id }}</td>
   </ng-container>
 
-  <!-- Name Column -->
+
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Name</th>
     <td mat-cell *matCellDef="let element">{{ element.name }}</td>
   </ng-container>
 
-  <!-- duration Column -->
+
   <ng-container matColumnDef="duration">
     <th mat-header-cell *matHeaderCellDef>Duration</th>
     <td mat-cell *matCellDef="let element">{{ element.duration }}</td>
   </ng-container>
 
-  <!-- calories Column -->
+
   <ng-container matColumnDef="calories">
     <th mat-header-cell *matHeaderCellDef>Calories</th>
     <td mat-cell *matCellDef="let element">{{ element.calories }}</td>
   </ng-container>
 
-  <!-- date Column -->
+
   <ng-container matColumnDef="date">
     <th mat-header-cell *matHeaderCellDef>Date</th>
     <td mat-cell *matCellDef="let element">{{ element.date | date }}</td>
   </ng-container>
 
-  <!-- state Column -->
+
   <ng-container matColumnDef="state">
     <th mat-header-cell *matHeaderCellDef>State</th>
     <td mat-cell *matCellDef="let element">{{ element.state }}</td>
@@ -37,4 +37,38 @@
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
+</table> -->
+
+<mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="date">
+    <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.date | date }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="calories">
+    <mat-header-cell *matHeaderCellDef>Calories</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{
+      element.calories | number
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="duration">
+    <mat-header-cell *matHeaderCellDef>Duration</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{
+      element.duration | number
+    }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="state">
+    <mat-header-cell *matHeaderCellDef>State</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.state }}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
