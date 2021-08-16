@@ -6,7 +6,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   template: `
     <h1 mat-dialog-title>Are you sure?</h1>
     <mat-dialog-content>
-      <p>You alrady got {{ data.progress }} %</p>
+      <p>You alredy got {{ data.progress }} %</p>
     </mat-dialog-content>
     <mat-dialog-actions>
       <button mat-raised-button [mat-dialog-close]="true">Yes</button>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Exercice } from 'src/app/models/exercise.model';
 import { TrainingService } from '../training.service';
 
 @Component({
@@ -7,11 +8,24 @@ import { TrainingService } from '../training.service';
   styleUrls: ['./new-training.component.scss'],
 })
 export class NewTrainingComponent implements OnInit {
+  exercices: Exercice[];
+  selectedExerciceId: string;
+
   constructor(public trainignService: TrainingService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.exercices = this.trainignService.getAvailableExercices();
+  }
+
+  selectCurrentExerciceId(exerciceId: any) {
+    this.selectedExerciceId = exerciceId;
+    // console.log(this.selectedExerciceId);
+  }
 
   onStartTraining(): void {
-    this.trainignService.ongoingTraining = true;
+    if (this.selectedExerciceId) {
+      this.trainignService.ongoingTraining = true;
+      this.trainignService.startExercice(this.selectedExerciceId);
+    }
   }
 }
